@@ -182,7 +182,7 @@ def run(
             sampler = methods["get_sampler"](
                 device,
             )
-            PatchCore_list = methods["get_patchcore"](imagesize, sampler, device)   # patchcore_update
+            PatchCore_list = methods["get_patchcore"](imagesize, sampler, device)  
 
             if len(PatchCore_list) > 1:
                 LOGGER.info(
@@ -518,7 +518,7 @@ def patch_core(
 
             nn_method = models.common.FaissNN(faiss_on_gpu, faiss_num_workers)
 
-            patchcore_instance = models.patchcore_update.PatchCore(device)
+            patchcore_instance = models.memory_update.PatchCore(device)
             patchcore_instance.load(
                 backbone=backbone,
                 layers_to_extract_from=layers_to_extract_from,
